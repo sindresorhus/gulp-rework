@@ -1,6 +1,6 @@
 {
   "name": "gulp-rework",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Preprocess CSS with Rework",
   "license": "MIT",
   "repository": "sindresorhus/gulp-rework",
