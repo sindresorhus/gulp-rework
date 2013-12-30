@@ -2,7 +2,7 @@
 
 > Preprocess CSS with [Rework](https://github.com/visionmedia/rework)
 
-*Issues with the output should be reported on the [Rework issue tracker](https://github.com/visionmedia/rework/issues).*
+*Issues with the output should be reported on the Rework [issue tracker](https://github.com/visionmedia/rework/issues).*
 
 
 ## Install
@@ -24,7 +24,7 @@ var autoprefixer = require('autoprefixer');
 gulp.task('default', function () {
 	gulp.src('src/app.css')
 		.pipe(rework(rework.at2x(), autoprefixer().rework))
-		.pipe(gulp.dest('dist/app.css'));
+		.pipe(gulp.dest('dist'));
 });
 ```
 
