@@ -9,6 +9,10 @@
     "email": "sindresorhus@gmail.com",
     "url": "http://sindresorhus.com"
   },
+  "contributors": [
+    "name": "Tim Pinington",
+    "email": "timpinington@gmail.com"
+  ],
   "engines": {
     "node": ">=0.8.0"
   },
