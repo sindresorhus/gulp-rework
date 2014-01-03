@@ -5,7 +5,6 @@ var rework = require('./index');
 
 it('should preprocess CSS using Rework', function (cb) {
 	var stream = rework(rework.at2x());
-
 	stream.on('data', function (data) {
 		assert.equal(
 			data.contents.toString(),
@@ -15,6 +14,6 @@ it('should preprocess CSS using Rework', function (cb) {
 	});
 
 	stream.write(new gutil.File({
-		contents: '.logo{background-image:url(\'component.png\');width:289px;height:113px;}'
+		contents: new Buffer('.logo{background-image:url(\'component.png\') at-2x;width:289px;height:113px;}')
 	}));
 });
