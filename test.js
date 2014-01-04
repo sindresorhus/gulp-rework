@@ -19,7 +19,7 @@ it('should preprocess CSS using Rework', function (cb) {
 });
 
 it('should preprocess CSS using Rework', function (cb) {
-	var stream = rework(rework.at2x(), true);
+	var stream = rework(rework.at2x(), { sourcemap: true });
 	stream.on('data', function (data) {
 		assert.equal(
 			data.contents.toString(),

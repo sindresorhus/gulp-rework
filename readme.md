@@ -36,8 +36,9 @@ var autoprefixer = require('autoprefixer');
 
 gulp.task('default', function () {
     gulp.src('src/app.css')
-        // Add true after plugins to enable soursemaps
-        .pipe(rework(rework.at2x(), autoprefixer().rework, true))
+        // Add true after plugins to enable soursemaps 
+        // same as rework.toString({sourcemap: true});
+        .pipe(rework(rework.at2x(), autoprefixer().rework, {sourcemap: true}))
         .pipe(gulp.dest('dist'));
 });
 ```
@@ -47,10 +48,10 @@ The `compress` option from Rework is intentionally missing. A separate task like
 
 The [built-in plugins](https://github.com/visionmedia/rework#plugins) are available on the `rework` instance. Eg. `rework.at2x()`.
 
-### rework(plugin, plugin, ..., [souremaps:false])
+### rework(plugin, plugin, ..., [toString:object])
 
-Plugins are supplied as arguments. The last argument is for source maps support
-this is optional, it is a boolean value which defaults to false.
+Plugins are supplied as arguments. The last argument is an object that is used
+with reworks toString method, to allow for source maps.
 
 
 ## License
