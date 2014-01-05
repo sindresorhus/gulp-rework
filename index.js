@@ -1,5 +1,5 @@
 'use strict';
-var es = require('event-stream');
+var map = require('map-stream');
 var rework = require('rework');
 var _ = require('lodash');
 var lastIsObject = _.compose(_.isPlainObject, _.last);
@@ -9,7 +9,7 @@ module.exports = function () {
 	var options = lastIsObject(args) ? args.pop() : {};
 	var plugins = args;
 
-	return es.map(function (file, cb) {
+	return map(function (file, cb) {
 		var ret = rework(file.contents.toString());
 		plugins.forEach(ret.use.bind(ret));
 		file.contents = new Buffer(ret.toString(options));
