@@ -5,6 +5,7 @@ var rework = require('./index');
 
 it('should preprocess CSS using Rework', function (cb) {
 	var stream = rework(rework.at2x());
+
 	stream.on('data', function (data) {
 		assert.equal(
 			data.contents.toString(),
@@ -18,8 +19,9 @@ it('should preprocess CSS using Rework', function (cb) {
 	}));
 });
 
-it('should preprocess CSS using Rework', function (cb) {
-	var stream = rework(rework.at2x(), { sourcemap: true });
+it('should support Source Map', function (cb) {
+	var stream = rework(rework.at2x(), {sourcemap: true});
+
 	stream.on('data', function (data) {
 		assert.equal(
 			data.contents.toString(),
