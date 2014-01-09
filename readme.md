@@ -19,11 +19,10 @@ npm install --save-dev gulp-rework
 ```js
 var gulp = require('gulp');
 var rework = require('gulp-rework');
-var autoprefixer = require('autoprefixer');
 
 gulp.task('default', function () {
 	gulp.src('src/app.css')
-		.pipe(rework(rework.at2x(), autoprefixer().rework, {sourcemap: true}))
+		.pipe(rework(rework.at2x(), {sourcemap: true}))
 		.pipe(gulp.dest('dist'));
 });
 ```
