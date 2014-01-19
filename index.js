@@ -1,7 +1,8 @@
 'use strict';
-var map = require('map-stream');
-var rework = require('rework');
+var gutil = require('gulp-util');
+var through = require('through2');
 var _ = require('lodash');
+var rework = require('rework');
 var lastIsObject = _.compose(_.isPlainObject, _.last);
 
 module.exports = function () {
@@ -9,11 +10,27 @@ module.exports = function () {
 	var options = lastIsObject(args) ? args.pop() : {};
 	var plugins = args;
 
-	return map(function (file, cb) {
-		var ret = rework(file.contents.toString());
-		plugins.forEach(ret.use.bind(ret));
-		file.contents = new Buffer(ret.toString(options));
-		cb(null, file);
+	return through.obj(function (file, enc, cb) {
+		if (file.isNull()) {
+			this.push(file);
+			return cb();
+		}
+
+		if (file.isStream()) {
+			this.emit('error', new gutil.PluginError('gulp-rework', 'Streaming not supported'));
+			return cb();
+		}
+
+		try {
+			var ret = rework(file.contents.toString());
+			plugins.forEach(ret.use.bind(ret));
+			file.contents = new Buffer(ret.toString(options));
+		} catch (err) {
+			this.emit('error', new gutil.PluginError('gulp-rework', err));
+		}
+
+		this.push(file);
+		cb();
 	});
 };
 

@@ -39,9 +39,9 @@
   ],
   "dependencies": {
     "gulp-util": "~2.2.5",
-    "map-stream": "0.0.4",
-    "rework": "~0.20.2",
-    "lodash": "~2.4.1"
+    "through2": "~0.4.0",
+    "lodash": "~2.4.1",
+    "rework": "~0.20.2"
   },
   "devDependencies": {
     "mocha": "*"
