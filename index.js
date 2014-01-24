@@ -1,9 +1,16 @@
 'use strict';
 var gutil = require('gulp-util');
 var through = require('through2');
-var _ = require('lodash');
 var rework = require('rework');
-var lastIsObject = _.compose(_.isPlainObject, _.last);
+
+function lastIsObject(args) {
+    var last = args[args.length -1];
+    if(typeof(last) !== 'object') { return false; }
+    if(Array.isArray(last)) { return false; }
+    if(last.prototype !== {}.prototype) { return false; }
+    if(last.constructor !== {}.constructor) { return false; }
+    return true;
+}
 
 module.exports = function () {
 	var args = [].slice.call(arguments);
@@ -34,5 +41,12 @@ module.exports = function () {
 	});
 };
 
-// mixin the rework built-in plugins
-_.assign(module.exports, rework);
+var reworkIgnores = ['properties'];
+
+for(var prop in rework) {
+    if(!~reworkIgnores.indexOf(prop)) {
+        if(rework.hasOwnProperty(prop) && typeof rework[prop] === 'function') {
+            module.exports[prop] = rework[prop].bind(rework);
+        }
+    }
+}
