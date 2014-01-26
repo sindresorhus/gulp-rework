@@ -35,4 +35,5 @@ module.exports = function () {
 };
 
 // mixin the rework built-in plugins
+delete rework.properties;
 _.assign(module.exports, rework);
