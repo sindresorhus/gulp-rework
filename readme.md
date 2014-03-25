@@ -1,4 +1,4 @@
-# [gulp](https://github.com/wearefractal/gulp)-rework [![Build Status](https://secure.travis-ci.org/sindresorhus/gulp-rework.png?branch=master)](http://travis-ci.org/sindresorhus/gulp-rework)
+# [gulp](https://github.com/wearefractal/gulp)-rework [![Build Status](https://travis-ci.org/sindresorhus/gulp-rework.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-rework)
 
 > Preprocess CSS with [Rework](https://github.com/visionmedia/rework)
 
@@ -7,14 +7,12 @@
 
 ## Install
 
-Install with [npm](https://npmjs.org/package/gulp-rework)
-
-```
-npm install --save-dev gulp-rework
+```bash
+$ npm install --save-dev gulp-rework
 ```
 
 
-## Example
+## Usage
 
 ```js
 var gulp = require('gulp');
@@ -29,7 +27,7 @@ gulp.task('default', function () {
 
 ## API
 
-The `compress` option from Rework is intentionally missing. A separate task like [gulp-csso](https://github.com/ben-eb/gulp-csso) will do a much better job.
+The `compress` option from Rework is intentionally missing. A separate task like [gulp-csso](https://github.com/ben-eb/gulp-csso) will do a better job.
 
 The [built-in plugins](https://github.com/visionmedia/rework#plugins) are available on the `rework` instance. Eg. `rework.at2x()`.
 
@@ -40,10 +38,10 @@ Optionally supply an object with options as the last argument.
 
 ### options.sourcemap
 
-Type: `Boolean`  
+Type: `boolean`  
 Default: `false`
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)

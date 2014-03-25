@@ -38,10 +38,10 @@
     "manipulation"
   ],
   "dependencies": {
-    "gulp-util": "~2.2.5",
-    "through2": "~0.4.0",
-    "lodash": "~2.4.1",
-    "rework": "~0.20.2"
+    "gulp-util": "^2.2.5",
+    "through2": "^0.4.0",
+    "lodash": "^2.4.1",
+    "rework": "^0.20.2"
   },
   "devDependencies": {
     "mocha": "*"
