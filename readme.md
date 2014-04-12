@@ -19,7 +19,7 @@ var gulp = require('gulp');
 var rework = require('gulp-rework');
 
 gulp.task('default', function () {
-	gulp.src('src/app.css')
+	return gulp.src('src/app.css')
 		.pipe(rework(rework.at2x(), {sourcemap: true}))
 		.pipe(gulp.dest('dist'));
 });
