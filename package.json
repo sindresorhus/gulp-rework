@@ -39,11 +39,12 @@
   ],
   "dependencies": {
     "gulp-util": "^2.2.5",
-    "through2": "^0.4.0",
     "lodash": "^2.4.1",
-    "rework": "^0.20.2"
+    "rework": "^1.0.0",
+    "through2": "^0.5.1"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "rework-plugin-at2x": "^1.0.1"
   }
 }

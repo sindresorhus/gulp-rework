@@ -7,7 +7,7 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save-dev gulp-rework
 ```
 
@@ -17,10 +17,11 @@ $ npm install --save-dev gulp-rework
 ```js
 var gulp = require('gulp');
 var rework = require('gulp-rework');
+var at2x = require('rework-plugin-at2x');
 
 gulp.task('default', function () {
 	return gulp.src('src/app.css')
-		.pipe(rework(rework.at2x(), {sourcemap: true}))
+		.pipe(rework(at2x(), {sourcemap: true}))
 		.pipe(gulp.dest('dist'));
 });
 ```
@@ -28,8 +29,6 @@ gulp.task('default', function () {
 ## API
 
 The `compress` option from Rework is intentionally missing. A separate task like [gulp-csso](https://github.com/ben-eb/gulp-csso) will do a better job.
-
-The [built-in plugins](https://github.com/visionmedia/rework#plugins) are available on the `rework` instance. Eg. `rework.at2x()`.
 
 ### rework(plugin, plugin, ..., [options])
 

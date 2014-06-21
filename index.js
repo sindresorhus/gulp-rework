@@ -33,7 +33,3 @@ module.exports = function () {
 		cb();
 	});
 };
-
-// mixin the rework built-in plugins
-delete rework.properties;
-_.assign(module.exports, rework);
