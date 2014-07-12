@@ -22,7 +22,7 @@ module.exports = function () {
 		}
 
 		try {
-			var ret = rework(file.contents.toString());
+			var ret = rework(file.contents.toString(), {source: file.path});
 			plugins.forEach(ret.use.bind(ret));
 			file.contents = new Buffer(ret.toString(options));
 		} catch (err) {
