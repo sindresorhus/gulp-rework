@@ -26,8 +26,7 @@ module.exports = function () {
 			plugins.forEach(ret.use.bind(ret));
 			file.contents = new Buffer(ret.toString(options));
 		} catch (err) {
-			err.fileName = file.path;
-			this.emit('error', new gutil.PluginError('gulp-rework', err));
+			this.emit('error', new gutil.PluginError('gulp-rework', err, {fileName: file.path}));
 		}
 
 		this.push(file);
