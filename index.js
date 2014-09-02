@@ -12,24 +12,22 @@ module.exports = function () {
 
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
-			this.push(file);
-			return cb();
+			cb(null, file);
+			return;
 		}
 
 		if (file.isStream()) {
-			this.emit('error', new gutil.PluginError('gulp-rework', 'Streaming not supported'));
-			return cb();
+			cb(new gutil.PluginError('gulp-rework', 'Streaming not supported'));
+			return;
 		}
 
 		try {
 			var ret = rework(file.contents.toString(), {source: file.path});
 			plugins.forEach(ret.use.bind(ret));
 			file.contents = new Buffer(ret.toString(options));
+			cb(null, file);
 		} catch (err) {
-			this.emit('error', new gutil.PluginError('gulp-rework', err, {fileName: err.filename || file.path}));
+			cb(new gutil.PluginError('gulp-rework', err, {fileName: err.filename || file.path}));
 		}
-
-		this.push(file);
-		cb();
 	});
 };
