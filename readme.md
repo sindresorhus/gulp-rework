@@ -1,4 +1,4 @@
-# [gulp](https://github.com/wearefractal/gulp)-rework [![Build Status](https://travis-ci.org/sindresorhus/gulp-rework.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-rework)
+# gulp-rework [![Build Status](https://travis-ci.org/sindresorhus/gulp-rework.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-rework)
 
 > Preprocess CSS with [Rework](https://github.com/visionmedia/rework)
 
@@ -7,7 +7,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save-dev gulp-rework
 ```
 
