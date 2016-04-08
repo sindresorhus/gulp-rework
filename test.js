@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-env mocha */
 var assert = require('assert');
 var gutil = require('gulp-util');
 var at2x = require('rework-plugin-at2x');

@@ -3,7 +3,7 @@ var gutil = require('gulp-util');
 var through = require('through2');
 var _ = require('lodash');
 var rework = require('rework');
-var lastIsObject = _.compose(_.isPlainObject, _.last);
+var lastIsObject = _.flowRight(_.isPlainObject, _.last);
 
 module.exports = function () {
 	var args = [].slice.call(arguments);
