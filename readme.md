@@ -38,6 +38,8 @@ Optionally supply an object with options as the last argument.
 
 ### options
 
+Type: `Object`
+
 #### sourcemap
 
 Type: `boolean`<br>

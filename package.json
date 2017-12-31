@@ -1,51 +1,47 @@
 {
-  "name": "gulp-rework",
-  "version": "1.2.0",
-  "description": "Preprocess CSS with Rework",
-  "license": "MIT",
-  "repository": "sindresorhus/gulp-rework",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "contributors": [
-    {
-      "name": "Tim Pinington",
-      "email": "timpinington@gmail.com"
-    }
-  ],
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "xo && mocha"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "gulpplugin",
-    "rework",
-    "style",
-    "stylesheet",
-    "css",
-    "preprocess",
-    "preprocessor",
-    "rework",
-    "compile",
-    "transform",
-    "manipulation"
-  ],
-  "dependencies": {
-    "gulp-util": "^3.0.0",
-    "lodash": "^4.8.2",
-    "rework": "^1.0.0",
-    "through2": "^2.0.0"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "rework-plugin-at2x": "^1.0.1",
-    "xo": "*"
-  }
+	"name": "gulp-rework",
+	"version": "1.2.0",
+	"description": "Preprocess CSS with Rework",
+	"license": "MIT",
+	"repository": "sindresorhus/gulp-rework",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && mocha"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"gulpplugin",
+		"rework",
+		"style",
+		"stylesheet",
+		"css",
+		"preprocess",
+		"preprocessor",
+		"rework",
+		"compile",
+		"transform",
+		"manipulation"
+	],
+	"dependencies": {
+		"lodash": "^4.8.2",
+		"plugin-error": "^0.1.2",
+		"rework": "^1.0.0",
+		"safe-buffer": "^5.1.1",
+		"through2": "^2.0.0"
+	},
+	"devDependencies": {
+		"mocha": "*",
+		"rework-plugin-at2x": "^1.0.1",
+		"vinyl": "^2.1.0",
+		"xo": "*"
+	}
 }
