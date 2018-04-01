@@ -33,19 +33,17 @@ module.exports = function () {
 				options.inputSourcemap = false;
 				options.sourcemapAsObject = true;
 			}
+
 			const result = ret.toString(options);
 			if (file.sourceMap) {
 				file.contents = Buffer.from(result.code);
-
 				result.map.file = file.relative;
-				result.map.sources = result.map.sources.map(() => {
-					return file.relative;
-				});
-
+				result.map.sources = result.map.sources.map(() => file.relative);
 				applySourceMap(file, result.map);
 			} else {
 				file.contents = Buffer.from(result);
 			}
+
 			cb(null, file);
 		} catch (err) {
 			cb(new PluginError('gulp-rework', err, {fileName: err.filename || file.path}));
