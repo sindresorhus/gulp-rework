@@ -36,11 +36,13 @@
 		"plugin-error": "^0.1.2",
 		"rework": "^1.0.0",
 		"safe-buffer": "^5.1.1",
-		"through2": "^2.0.0"
+		"through2": "^2.0.0",
+		"vinyl-sourcemaps-apply": "^0.2.1"
 	},
 	"devDependencies": {
 		"mocha": "*",
 		"rework-plugin-at2x": "^1.0.1",
+		"source-map": "^0.6.1",
 		"vinyl": "^2.1.0",
 		"xo": "*"
 	}
