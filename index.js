@@ -3,13 +3,11 @@ const through = require('through2');
 const _ = require('lodash');
 const rework = require('rework');
 const PluginError = require('plugin-error');
-const Buffer = require('safe-buffer').Buffer;
 const applySourceMap = require('vinyl-sourcemaps-apply');
 
 const lastIsObject = _.flowRight(_.isPlainObject, _.last);
 
-module.exports = function () {
-	const args = [].slice.call(arguments);
+module.exports = (...args) => {
 	const options = Object.assign({}, lastIsObject(args) ? args.pop() : {});
 	const plugins = args;
 
