@@ -1,3 +1,9 @@
+# Deprecated
+
+The Rework project is no longer maintained.
+
+---
+
 # gulp-rework [![Build Status](https://travis-ci.org/sindresorhus/gulp-rework.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-rework)
 
 > Preprocess CSS with [Rework](https://github.com/reworkcss/rework)
